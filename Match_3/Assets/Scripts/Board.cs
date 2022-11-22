@@ -126,6 +126,8 @@ public sealed class Board : MonoBehaviour
 
                 await deflateSequence.Play().AsyncWaitForCompletion();
 
+                ScoreCounter.Instance.Score += tile.Item.value * connectedTiles.Count;
+
 
                 var inflateSequence = DOTween.Sequence();
 
@@ -138,6 +140,9 @@ public sealed class Board : MonoBehaviour
                 }
 
                 await inflateSequence.Play().AsyncWaitForCompletion();
+
+                x = 0;
+                y = 0;
             }
         }
     }
