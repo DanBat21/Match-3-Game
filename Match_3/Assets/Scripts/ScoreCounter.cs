@@ -8,6 +8,7 @@ public sealed class ScoreCounter : MonoBehaviour
     public static ScoreCounter Instance { get; private set; }
 
     private int _score;
+    
 
     public int Score
     {
@@ -18,8 +19,10 @@ public sealed class ScoreCounter : MonoBehaviour
             if (_score == value) return;
 
             _score = value;
+            
 
             scoreText.SetText($"Score = {_score}");
+            
         }
     }
 
