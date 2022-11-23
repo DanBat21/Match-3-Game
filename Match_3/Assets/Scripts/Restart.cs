@@ -12,6 +12,6 @@ public class Restart : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Menu");
     }
 }

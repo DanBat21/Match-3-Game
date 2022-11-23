@@ -28,7 +28,10 @@ public sealed class Board : MonoBehaviour
     private const float TweenDuration = 0.25f;
 
 
-    private void Awake() => Instance = this;
+    private void Awake() 
+    { 
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -146,7 +149,9 @@ public sealed class Board : MonoBehaviour
                 audioSource.PlayOneShot(collectSound);
                 
                 ScoreCounter.Instance.Score += tile.Item.value * connectedTiles.Count;
+                ScoreCounter.Instance.HighScore += tile.Item.value * connectedTiles.Count;
 
+                
 
                 await deflateSequence.Play().AsyncWaitForCompletion();
 
